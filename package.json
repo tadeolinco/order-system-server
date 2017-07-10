@@ -1,0 +1,33 @@
+{
+  "name": "order-system-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "NODE_ENV=development node_modules/.bin/nodemon -- node_modules/babel-cli/bin/babel-node src/server.js",
+    "build": "node_modules/babel-cli/bin/babel.js src --source-maps --out-dir dist",
+    "apidoc": "node_modules/apidoc/bin/apidoc -i src/ -o apidoc/"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.6",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.1",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.5.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --tab-width 4 --single-quote --write",
+      "git add"
+    ]
+  }
+}
