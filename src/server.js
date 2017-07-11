@@ -1,9 +1,3 @@
-/**
- * git remote add origin https://github.com/tadeolinco/order-system-server.git
-git push -u origin master
- * 
- */
-
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
@@ -17,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 if (ENV === 'development') {
     app.use(logger('dev'));
-    app.use(express.static(__dirname + '../apidoc'));
+    app.use(express.static(__dirname + '/../apidoc'));
 }
 
 app.use(router);
